@@ -1,7 +1,9 @@
 const repeatString = function(wordRepeated, numberOfRepeats) {
-    if 
-    let wordRepeatedArray = [wordRepeated];
-    for (i = 0; i < numberOfRepeats-1; i++) {
+    let wordRepeatedArray = [];
+    if (numberOfRepeats < 0) {
+        return `ERROR`;
+    }
+    for (i = 0; i < numberOfRepeats; i++) {
         wordRepeatedArray.push(wordRepeated);
     }
     wordRepeated = wordRepeatedArray.join(``);
