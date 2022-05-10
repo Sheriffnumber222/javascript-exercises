@@ -1,10 +1,18 @@
-const removeFromArray = function(arrayInputed, itemToRemove) {
+const removeFromArray = function(arrayInputed) {
+    let args = Array.prototype.slice.call(arguments, 1);
+    let newArray = [];
     for (i = 0; i < arrayInputed.length; i++) {
-        if (arrayInputed[i] == itemToRemove) {
-            arrayInputed.splice(i, 1);
+        let arrayMatch = 0;
+        for (w = 0; w < args.length; w++) {
+            if (arrayInputed[i] === args[w]) {
+                arrayMatch += 1
+            }
+        }
+        if (arrayMatch === 0) {
+            newArray.push(arrayInputed[i]);
         }
     }
-    return arrayInputed.join();
+    return newArray;
 };
 
 // Do not edit below this line
